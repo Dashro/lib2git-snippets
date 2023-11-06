@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "vs2019",
+      "hidden": true,
+      "generator": "Visual Studio 16 2019",
+      "architecture": "Win32",
+      "cacheVariables": {
+      }
+    },
+    {
+      "name": "vs2019_release",
+      "inherits": "vs2019",
+      "displayName": "MSVC2019/Qt5.15 Release",
+      "binaryDir": "${sourceDir}/build_vs2019_release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "vs2019_debug",
+      "inherits": "vs2019",
+      "displayName": "MSVC2019/Qt5.15 Debug",
+      "binaryDir": "${sourceDir}/build_vs2019_debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "vs2019_release",
+      "configurePreset": "vs2019_release",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2019_debug",
+      "configurePreset": "vs2019_debug",
+      "configuration": "Debug"
+    }
+  ],
+  "testPresets": [
+    
+  ]
+}
